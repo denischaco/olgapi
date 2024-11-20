@@ -37,6 +37,7 @@ export async function POST(request: NextRequest) {
       
       let isCorrect = false;
       matchingPrograms = [];
+      const conductor: number | null = currentConfig.length > 0 ? currentConfig[0] : null; // Asigna un valor por defecto
 
       if (guessType === 'occurred-in-order') {
         isCorrect = programasConductores.some(program => 
